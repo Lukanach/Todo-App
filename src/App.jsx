@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
-import "./App.css";
-import { Footer } from "./components/Footer/Footer";
-import { Header } from "./components/Header/Header";
-import { Main } from "./components/Main/Main";
+import { useState } from 'react';
+import './App.css';
+import { Footer } from './components/Footer/Footer';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -23,17 +23,15 @@ function App() {
   };
 
   const changeStatusTodo = (id) => {
-    setTodos((prev) =>
-      prev.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          };
-        }
-        return todo;
-      })
-    );
+    setTodos((prev) => prev.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+      return todo;
+    }));
   };
 
   const clearAllTodos = () => {
@@ -46,13 +44,9 @@ function App() {
     <div className="container py-5">
       <Header addNewTodo={addNewTodo} />
       <hr />
-      <Main
-        todos={todos}
-        deleteTodo={deleteTodo}
-        changeStatusTodo={changeStatusTodo}
-      />
+      <Main todos={todos} deleteTodo={deleteTodo} changeStatusTodo={changeStatusTodo} />
       <hr />
-      <Footer todos={todos} clearAllTodos={clearAllTodos} />
+      <Footer clearAllTodos={clearAllTodos} />
     </div>
   );
 }

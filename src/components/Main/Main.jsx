@@ -1,13 +1,9 @@
-import { TodoList } from "../TodoList/TodoList";
+import { TodoList } from '../TodoList/TodoList';
 
-export const Main = ({ todos, changeStatusTodo, deleteTodo }) => {
+export function Main({ todos, changeStatusTodo, deleteTodo }) {
   return (
     <main>
-      <TodoList
-        changeStatusTodo={changeStatusTodo}
-        deleteTodo={deleteTodo}
-        todos={todos}
-      />
+      <TodoList changeStatusTodo={changeStatusTodo} deleteTodo={deleteTodo} todos={todos} />
     </main>
   );
-};
+}

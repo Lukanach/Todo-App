@@ -1,6 +1,6 @@
-import { TodoItem } from "../TodoItem/TodoItem";
+import { TodoItem } from '../TodoItem/TodoItem';
 
-export const TodoList = ({ todos, changeStatusTodo, deleteTodo }) => {
+export function TodoList({ todos, changeStatusTodo, deleteTodo }) {
   if (!todos.length) return <p>List is empty...</p>;
 
   return (
@@ -18,4 +18,4 @@ export const TodoList = ({ todos, changeStatusTodo, deleteTodo }) => {
       ))}
     </ul>
   );
-};
+}
